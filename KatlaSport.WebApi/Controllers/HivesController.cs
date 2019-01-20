@@ -66,7 +66,7 @@ namespace KatlaSport.WebApi.Controllers
             return Created<Hive>(location, hive);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("{id:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Updates an existed hive.")]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
