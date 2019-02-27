@@ -1,10 +1,10 @@
 ﻿using System.Data.Entity;
 using System.Reflection;
 using KatlaSport.DataAccess.CustomerCatalogue;
-using KatlaSport.DataAccess.Migrations;
 using KatlaSport.DataAccess.ProductCatalogue;
 using KatlaSport.DataAccess.ProductStore;
 using KatlaSport.DataAccess.ProductStoreHive;
+using KatlaSport.DataAccess.StoreItemRequest;
 
 namespace KatlaSport.DataAccess
 {
@@ -19,7 +19,7 @@ namespace KatlaSport.DataAccess
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>(true));
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Migrations.Configuration>(true));
 
             // DatabaseLogger = databaseLogger;
 
@@ -68,6 +68,11 @@ namespace KatlaSport.DataAccess
         /// Gets or sets a <see cref="DbSet"/> for <see cref="Customer"/>.
         /// </summary>
         public DbSet<Customer> Customers { get; set; }
+
+        /// <summary>
+        /// Gets or sets a <see cref="DbSet"/> for <see cref="Request"/>.
+        /// </summary>
+        public DbSet<Request> Requests { get; set; }
 
         /// <summary>
         /// Overrides base method.

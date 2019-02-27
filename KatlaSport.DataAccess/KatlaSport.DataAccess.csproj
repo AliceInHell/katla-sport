@@ -77,7 +77,7 @@
     <Compile Include="Migrations\201901171248420_FixProductDescriptionManCodePrice.Designer.cs">
       <DependentUpon>201901171248420_FixProductDescriptionManCodePrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migration\Configuration"></Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
