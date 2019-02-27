@@ -83,6 +83,7 @@
     <Compile Include="ProductManagement\ProductCategoryListItem.cs" />
     <Compile Include="ProductManagement\ProductCategoryProductListItem.cs" />
     <Compile Include="ProductManagement\ProductListItem.cs" />
+    <Compile Include="ProductManagement\ProductStoreItem.cs" />
     <Compile Include="ProductManagement\UpdateProductCategoryRequest.cs" />
     <Compile Include="ProductManagement\UpdateProductCategoryRequestValidator.cs" />
     <Compile Include="ProductManagement\UpdateProductRequest.cs" />
