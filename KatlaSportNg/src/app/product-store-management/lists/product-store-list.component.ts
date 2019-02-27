@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductListItem } from '../models/product-list-item';
-import { ProductService } from '../services/product.service';
+import { ProductStoreItem } from '../models/product-store';
+import { ProductStoreService } from '../services/product-store.service';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: 'app-product-ыещку-list',
+  templateUrl: './product-store-list.component.html',
+  styleUrls: ['./product-store-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductStoreListComponent implements OnInit {
 
-  products: ProductListItem[];
+  hiveSectionId: number;
+  storeItems: ProductStoreItem[];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private productStoreService: ProductStoreService
   ) { }
 
   ngOnInit() {
-    this.productService.getProducts().subscribe(p => this.products = p);
+    this.route.params.subscribe(p => {
+      this.hiveSectionId = p['hiveSectionId'];
+      this.productStoreService.getSectionProducts(this.hiveSectionId).subscribe(i => this.storeItems = i);
+    })
   }
 }
