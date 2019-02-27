@@ -24,5 +24,17 @@ export class ProductStoreListComponent implements OnInit {
       this.hiveSectionId = p['hiveSectionId'];
       this.productStoreService.getSectionProducts(this.hiveSectionId).subscribe(i => this.storeItems = i);
     })
+  }  
+
+  navigateToHiveSections() {
+    if (this.hiveSectionId === undefined) {
+      this.router.navigate(['/hives']);
+    } else {
+      //this.router.navigate([`/hive/${this.hiveId}/sections`]);
+    }
+  }
+
+  onCancel() {
+    this.navigateToHiveSections();
   }
 }
