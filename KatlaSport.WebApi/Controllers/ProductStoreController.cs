@@ -12,7 +12,7 @@ using System.Web.Http.Cors;
 namespace KatlaSport.WebApi.Controllers
 {
     [ApiVersion("1.0")]
-    [RoutePrefix("api/store")]
+    [RoutePrefix("api/productStore")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     [CustomExceptionFilter]
     [SwaggerResponseRemoveDefaults]
