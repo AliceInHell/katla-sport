@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Product Stories</h2>
+  <table class="table table-nofluid">
+    <thead>
+      <th scope="col">#</th>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>      
+      <th scope="col">Quantity</th>      
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of storeItems">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.product.code}}</td>
+        <td>{{item.product.name}}</td>        
+        <td>{{item.quantity}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="btn-group mr-1" role="group" aria-label="Cancel group">
+    <button type="button" class="btn btn-primary" (click)="onCancel()">Back</button>
+  </div>
+</div>
