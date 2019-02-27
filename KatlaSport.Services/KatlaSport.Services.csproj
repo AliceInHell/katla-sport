@@ -88,6 +88,8 @@
     <Compile Include="ProductManagement\ProductCatalogueService.cs" />
     <Compile Include="ProductManagement\ProductCategoryService.cs" />
     <Compile Include="ProductManagement\ProductManagementMappingProfile.cs" />
+    <Compile Include="ProductStoreManagement\ProductStoreManagementProfile.cs" />
+    <Compile Include="ProductStoreManagement\ProductStoreService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestedResourceHasConflictException.cs" />
     <Compile Include="RequestedResourceNotFoundException.cs" />
