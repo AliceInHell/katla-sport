@@ -27,14 +27,14 @@ export class ProductStoreRequestListComponent implements OnInit {
   approve(requestId: number) {
     var request = this.requests.find(r => r.id == requestId);
     this.productStoreRequestService.approve(requestId).subscribe(r => {
-      request.isProcessed = true;
+      this.requests.splice(this.requests.indexOf(request), 1);
     });
   }
 
   reject(requestId: number) {
     var request = this.requests.find(r => r.id == requestId);
     this.productStoreRequestService.reject(requestId).subscribe(r => {
-      request.isProcessed = true;
+      this.requests.splice(this.requests.indexOf(request), 1);
     });
   }
 }
