@@ -22,9 +22,11 @@ namespace KatlaSport.Services.ProductStoreRequestManagement
         /// Initializes a new instance of the <see cref="ProductStoreRequestService"/> class.
         /// </summary>
         /// <param name="productStoreContext">Context.</param>
-        public ProductStoreRequestService(IProductStoreRequestContext productStoreContext)
+        /// <param name="userContext">User context.</param>
+        public ProductStoreRequestService(IProductStoreRequestContext productStoreContext, IUserContext userContext)
         {
             _context = productStoreContext ?? throw new ArgumentNullException(nameof(productStoreContext));
+            _userContext = userContext ?? throw new ArgumentNullException(nameof(userContext));
         }
 
         /// <inheritdoc/>
