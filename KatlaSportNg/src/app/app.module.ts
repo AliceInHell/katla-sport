@@ -19,8 +19,10 @@ import { ProductCategoryProductListComponent } from 'app/product-management/list
 import { ProductListComponent } from 'app/product-management/lists/product-list.component';
 import { ProductCategoryService } from 'app/product-management/services/product-category.service';
 import { ProductService } from 'app/product-management/services/product.service';
-import { ProductStoreListComponent } from 'app/product-store-management/lists/product-store-list.component'
-import { ProductStoreRequestComponent} from 'app/product-store-management/forms/product-store-request-form.component'
+import { ProductStoreListComponent } from 'app/product-store-management/lists/product-store-list.component';
+import { ProductStoreRequestComponent } from 'app/product-store-management/forms/product-store-request-form.component';
+import { MaxNumberValidatorDirective } from 'app/validators/max-number-validator.directive';
+import { MinNumberValidatorDirective } from 'app/validators/min-number-validator.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { ProductStoreRequestComponent} from 'app/product-store-management/forms/
     HiveSectionListComponent,
     ProductStoreListComponent,
     ProductStoreRequestComponent,
+    MaxNumberValidatorDirective,
+    MinNumberValidatorDirective,
   ],
   imports: [
     // Angular imports
