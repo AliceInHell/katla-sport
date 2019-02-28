@@ -9,6 +9,11 @@ namespace KatlaSport.Services.ProductStoreManagement
     public class UpdateRequest
     {
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// Gets or sets product store id.
         /// </summary>
         public int ProductStoreId { get; set; }
