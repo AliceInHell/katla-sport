@@ -4,6 +4,7 @@ using Microsoft.Web.Http;
 using Swashbuckle.Swagger.Annotations;
 using System;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -31,7 +32,7 @@ namespace KatlaSport.WebApi.Controllers
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
         public async Task<IHttpActionResult> GetRequestsAsync()
         {            
-            var products = await _productStoreRequestService.GetRequests();
+            var products = await _productStoreRequestService.GetRequestsAsync();
             return Ok(products);
         }
 
@@ -48,10 +49,46 @@ namespace KatlaSport.WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            var product = await _productStoreRequestService.CreateRequest(createRequest);
+            var product = await _productStoreRequestService.CreateRequestAsync(createRequest);
             var location = string.Format("/api/productRequests/{0}", product.Id);
 
             return Created<FeedbackRequest>(location, product);
+        }
+
+        [HttpPut]
+        [Route("{id:int:min(1)}/approve")]
+        [SwaggerResponse(HttpStatusCode.NoContent, Description = "Approve request.")]
+        [SwaggerResponse(HttpStatusCode.BadRequest)]
+        [SwaggerResponse(HttpStatusCode.Conflict)]
+        [SwaggerResponse(HttpStatusCode.NotFound)]
+        [SwaggerResponse(HttpStatusCode.InternalServerError)]
+        public async Task<IHttpActionResult> ApproveRequestAsync([FromUri] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _productStoreRequestService.ApproveRequestAsync(id);
+            return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
+        }
+
+        [HttpPut]
+        [Route("{id:int:min(1)}/reject")]
+        [SwaggerResponse(HttpStatusCode.NoContent, Description = "Reject request.")]
+        [SwaggerResponse(HttpStatusCode.BadRequest)]
+        [SwaggerResponse(HttpStatusCode.Conflict)]
+        [SwaggerResponse(HttpStatusCode.NotFound)]
+        [SwaggerResponse(HttpStatusCode.InternalServerError)]
+        public async Task<IHttpActionResult> RejectRequest([FromUri] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _productStoreRequestService.RejectRequestAsync(id);
+            return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
         }
     }
 }
