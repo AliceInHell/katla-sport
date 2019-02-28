@@ -26,6 +26,6 @@ namespace KatlaSport.Services.ProductStoreManagement
         /// <summary>
         /// Gets or sets a value indicating whether gets or sets ...
         /// </summary>
-        public bool IsCancelled { get; set; }
+        public bool IsProcessed { get; set; }
     }
 }
