@@ -21,7 +21,7 @@ namespace KatlaSport.Services.ProductStoreManagement
         /// <summary>
         /// Gets or sets additional product amount.
         /// </summary>
-        public int Amount { get; set; }
+        public int Quantity { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether gets or sets ...

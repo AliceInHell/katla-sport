@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KatlaSport.Services.ProductStoreManagement
+﻿namespace KatlaSport.Services.ProductStoreManagement
 {
     /// <summary>
     /// Represents a request for add some products.
@@ -18,9 +16,9 @@ namespace KatlaSport.Services.ProductStoreManagement
         public int ProductStoreId { get; set; }
 
         /// <summary>
-        /// Gets or sets request time.
+        /// Gets or sets product quqantity.
         /// </summary>
-        public DateTime Time { get; set; }
+        public int Quantity { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether gets or sets ...

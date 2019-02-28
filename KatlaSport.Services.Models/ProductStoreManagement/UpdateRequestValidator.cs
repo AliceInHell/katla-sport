@@ -12,7 +12,7 @@ namespace KatlaSport.Services.ProductStoreManagement
         /// </summary>
         public UpdateRequestValidator()
         {
-            RuleFor(r => r.Amount).GreaterThan(0);
+            RuleFor(r => r.Quantity).GreaterThan(0);
             RuleFor(r => r.ProductStoreId).GreaterThan(0);
         }
     }

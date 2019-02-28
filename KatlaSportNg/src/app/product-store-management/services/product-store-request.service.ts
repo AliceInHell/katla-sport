@@ -8,7 +8,7 @@ import { ProductStoreRequest } from '../models/product-store-request';
   providedIn: 'root'
 })
 export class ProductStoreRequestService {
-  private url = environment.apiUrl + 'api/productRequest/';
+  private url = environment.apiUrl + 'api/productRequests/';
 
   constructor(private http: HttpClient) { }  
 
