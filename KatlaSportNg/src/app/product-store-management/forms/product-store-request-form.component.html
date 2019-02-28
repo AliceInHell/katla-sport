@@ -9,6 +9,18 @@
     </div>
 
     <div class="form-group">
+      <label for="productStoreHiveIdLabel">Product Store Hive Id</label>
+      <input type="text" class="form-control" id="productStoreHiveId" aria-describedby="productStoreHiveLabel" 
+        [(ngModel)]="this.hiveId" name="hiveId" #id="ngModel" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="productStoreHiveSectionIdLabel">Product Store Hive Id</label>
+      <input type="text" class="form-control" id="productStoreHiveSectionId" aria-describedby="productStoreHiveSectionLabel" 
+        [(ngModel)]="this.hiveSectionId" name="hiveSectionId" #id="ngModel" readonly>
+    </div>
+
+    <div class="form-group">
       <label for="quantity" id="productStoreQuantityLabel">Quantity</label>
       <input type="number" class="form-control" id="quantity" aria-describedby="productStoreQuantityLabel" 
         required minValue="1" maxValue="100" [(ngModel)]="productStoreRequest.quantity" name="quantity" #quantity="ngModel">

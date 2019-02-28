@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Product Store Requests</h2>
+  <table class="table table-nofluid">
+    <thead>
+      <th scope="col">#</th>
+      <th scope="col">Hive Id</th>
+      <th scope="col">Hive Section Id</th>
+      <th scope="col">Product Store Id</th>
+      <th score="col">Quantity</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests">
+        <th scope="row">{{request.id}}</th>
+        <td>{{request.hiveId}}</td>
+        <td>{{request.hiveSectionId}}</td>  
+        <td>{{request.productStoreId}}</td>      
+        <td>{{request.quantity}}</td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Aprove group">
+            <button type="button" class="btn btn-primary" (click)="approve(request.id)">Approve</button>
+          </div>
+        </td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Reject group">
+            <button type="button" class="btn btn-primary" (click)="reject(request.id)">Reject</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>  
+</div>

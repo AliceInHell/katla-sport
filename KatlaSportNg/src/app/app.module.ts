@@ -23,6 +23,7 @@ import { ProductStoreListComponent } from 'app/product-store-management/lists/pr
 import { ProductStoreRequestComponent } from 'app/product-store-management/forms/product-store-request-form.component';
 import { MaxNumberValidatorDirective } from 'app/validators/max-number-validator.directive';
 import { MinNumberValidatorDirective } from 'app/validators/min-number-validator.directive';
+import { ProductStoreRequestListComponent } from 'app/product-store-management/lists/product-store-request-list.component'
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MinNumberValidatorDirective } from 'app/validators/min-number-validator
     ProductStoreRequestComponent,
     MaxNumberValidatorDirective,
     MinNumberValidatorDirective,
+    ProductStoreRequestListComponent,
   ],
   imports: [
     // Angular imports
