@@ -16,6 +16,16 @@
         public int ProductStoreId { get; set; }
 
         /// <summary>
+        /// Gets or sets store hive id.
+        /// </summary>
+        public int HiveId { get; set; }
+
+        /// <summary>
+        /// Gets or sets store hive section id.
+        /// </summary>
+        public int HiveSectionId { get; set; }
+
+        /// <summary>
         /// Gets or sets product quqantity.
         /// </summary>
         public int Quantity { get; set; }

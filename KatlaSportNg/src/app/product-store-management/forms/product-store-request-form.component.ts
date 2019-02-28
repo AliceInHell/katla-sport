@@ -12,8 +12,8 @@ export class ProductStoreRequestComponent implements OnInit {
 
   productStoreId: number;
   hiveId: number;
-  sectionId: number;
-  productStoreRequest = new ProductStoreRequest(0, 0, 0, false);
+  hiveSectionId: number;
+  productStoreRequest = new ProductStoreRequest(0, 0, 0, 0, 0, false);
 
   constructor(
     private route: ActivatedRoute,
@@ -25,13 +25,15 @@ export class ProductStoreRequestComponent implements OnInit {
     this.route.params.subscribe(p => {
       this.productStoreId = p['productStoreId'];
       this.hiveId = p['hiveId'];
-      this.sectionId = p['sectionId'];
+      this.hiveSectionId = p['sectionId'];
       this.productStoreRequest.productStoreId = this.productStoreId;
+      this.productStoreRequest.hiveId = this.hiveId;
+      this.productStoreRequest.hiveSectionId = this.hiveSectionId;
     });
   }
 
   navigateToProducts() {    
-    this.router.navigate([`/productStore/${this.hiveId}/${this.sectionId}`]);
+    this.router.navigate([`/productStore/${this.hiveId}/${this.hiveSectionId}`]);
   }
 
   onCancel() {

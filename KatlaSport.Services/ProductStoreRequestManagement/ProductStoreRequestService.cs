@@ -68,14 +68,31 @@ namespace KatlaSport.Services.ProductStoreRequestManagement
 
             await _productStoreRequestContext.SaveChangesAsync();
 
-            return Mapper.Map<FeedbackRequest>(request);
+            var createdRequest = Mapper.Map<FeedbackRequest>(request);
+            var storeItem = _productStoreContext.Items.Where(i => i.Id == createdRequest.ProductStoreId)
+                .FirstOrDefault();
+
+            createdRequest.HiveId = storeItem.HiveSection.StoreHiveId;
+            createdRequest.HiveSectionId = storeItem.HiveSectionId;
+
+            return createdRequest;
         }
 
         /// <inheritdoc/>
         public async Task<List<FeedbackRequest>> GetRequestsAsync()
         {
             var dbRequests = await _productStoreRequestContext.Requests.Where(r => !r.IsProcessed).ToArrayAsync();
-            var requests = dbRequests.Select(r => Mapper.Map<FeedbackRequest>(r)).ToList();
+            var requests = dbRequests.Select(r =>
+            {
+                var createdRequest = Mapper.Map<FeedbackRequest>(r);
+                var storeItem = _productStoreContext.Items.Where(i => i.Id == createdRequest.ProductStoreId)
+                    .FirstOrDefault();
+
+                createdRequest.HiveId = storeItem.HiveSection.StoreHiveId;
+                createdRequest.HiveSectionId = storeItem.HiveSectionId;
+
+                return createdRequest;
+            }).ToList();
 
             return requests;
         }

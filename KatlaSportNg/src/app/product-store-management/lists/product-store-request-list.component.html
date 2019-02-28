@@ -3,8 +3,9 @@
   <table class="table table-nofluid">
     <thead>
       <th scope="col">#</th>
-      <th scope="col">Product Id</th>
+      <th scope="col">Hive Id</th>
       <th scope="col">Hive Section Id</th>
+      <th scope="col">Product Store Id</th>
       <th score="col">Quantity</th>
       <th></th>
       <th></th>
@@ -12,8 +13,9 @@
     <tbody>
       <tr *ngFor="let request of requests">
         <th scope="row">{{request.id}}</th>
-        <td></td>
-        <td></td>        
+        <td>{{request.hiveId}}</td>
+        <td>{{request.hiveSectionId}}</td>  
+        <td>{{request.productStoreId}}</td>      
         <td>{{request.quantity}}</td>
         <td>
           <div class="btn-group" role="group" aria-label="Aprove group">
