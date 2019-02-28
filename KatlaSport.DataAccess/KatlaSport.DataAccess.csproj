@@ -77,7 +77,11 @@
     <Compile Include="Migrations\201901171248420_FixProductDescriptionManCodePrice.Designer.cs">
       <DependentUpon>201901171248420_FixProductDescriptionManCodePrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\201902280016394_Request-Init.cs" />
+    <Compile Include="Migrations\201902280016394_Request-Init.Designer.cs">
+      <DependentUpon>201902280016394_Request-Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />  
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901171248420_FixProductDescriptionManCodePrice.resx">
       <DependentUpon>201901171248420_FixProductDescriptionManCodePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902280016394_Request-Init.resx">
+      <DependentUpon>201902280016394_Request-Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
