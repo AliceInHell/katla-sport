@@ -11,7 +11,7 @@ namespace KatlaSport.DataAccess.StoreItemRequest
             Property(i => i.UserId).HasColumnName("user_id");
             Property(i => i.ProductStoreId).HasColumnName("product_store_id");
             Property(i => i.Time).HasColumnName("time");
-            Property(i => i.Amount).HasColumnName("amount");
+            Property(i => i.Quantity).HasColumnName("amount");
             Property(i => i.IsCancelled).HasColumnName("is_cancelled");
         }
     }

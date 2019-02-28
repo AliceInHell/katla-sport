@@ -30,7 +30,7 @@ export class ProductStoreRequestComponent implements OnInit {
     });
   }
 
-  navigateToProducts() {
+  navigateToProducts() {    
     this.router.navigate([`/productStore/${this.hiveId}/${this.sectionId}`]);
   }
 
@@ -39,8 +39,8 @@ export class ProductStoreRequestComponent implements OnInit {
   }
 
   onSubmit() {
-    this.productStoreRequestService.createRequest(this.productStoreRequest).subscribe(s => {
+    this.productStoreRequestService.createRequest(this.productStoreRequest).subscribe(s => {      
       this.navigateToProducts();
-    });        
+    });            
   }
 }
