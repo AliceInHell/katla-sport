@@ -12,6 +12,6 @@ namespace KatlaSport.Services.ProductStoreManagement
         /// </summary>
         /// <param name="updateRequest">Updating request</param>
         /// <returns><see cref="Task"/>.</returns>
-        Task CreateRequest(UpdateRequest updateRequest);
+        void CreateRequest(UpdateRequest updateRequest);
     }
 }

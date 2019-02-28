@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a context for users requests.
     /// </summary>
-    public interface IRequestContext
+    public interface IProductStoreRequestContext
     {
         /// <summary>
         /// Gets a set of <see cref="Request"/> entities.

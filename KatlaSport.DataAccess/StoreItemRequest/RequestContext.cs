@@ -1,6 +1,6 @@
 ﻿namespace KatlaSport.DataAccess.StoreItemRequest
 {
-    internal class RequestContext : DomainContextBase<ApplicationDbContext>, IRequestContext
+    internal class RequestContext : DomainContextBase<ApplicationDbContext>, IProductStoreRequestContext
     {
         public RequestContext(ApplicationDbContext dbContext)
             : base(dbContext)
