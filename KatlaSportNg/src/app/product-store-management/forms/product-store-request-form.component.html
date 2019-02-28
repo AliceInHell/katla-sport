@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Product Store Request</h2>
+  <form (ngSubmit)="onSubmit()" #productStoreRequestForm="ngForm">
+
+    <div class="form-group">
+      <label for="productStoreIdLabel">Product Store Id</label>
+      <input type="text" class="form-control" id="productStoreId" aria-describedby="productStoreLabel" 
+        [(ngModel)]="this.productStoreId" name="productStoreId" #id="ngModel" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity" id="productStoreQuantityLabel">Quantity</label>
+      <input type="number" class="form-control" id="quantity" aria-describedby="productStoreQuantityLabel" 
+        required minValue="1" maxValue="100" [(ngModel)]="productStoreRequest.quantity" name="quantity" #quantity="ngModel">
+      <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)" class="alert alert-danger">
+        <div *ngIf="quantity.errors.required">Product Quantity is required.</div>
+        <div *ngIf="quantity.errors.minValue">Min Quantity is 1.</div>
+        <div *ngIf="quantity.errors.maxValue">Max Quantity is 100.</div>
+      </div>
+    </div>
+
+    <div class="btn-toolbar" role="toolbar" aria-label="Action buttons">
+      <div class="btn-group mr-1" role="group" aria-label="Cancel group">
+        <button type="button" class="btn btn-primary" (click)="onCancel()">Back</button>
+      </div>
+      <div class="btn-group mr-4" role="group" aria-label="Save group">
+        <button type="submit" class="btn btn-primary" [disabled]="productStoreRequestForm.form.invalid">Add</button>
+      </div>      
+    </div>
+
+  </form>
+</div>
