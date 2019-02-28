@@ -90,6 +90,8 @@
     <Compile Include="ProductManagement\ProductManagementMappingProfile.cs" />
     <Compile Include="ProductStoreManagement\ProductStoreManagementProfile.cs" />
     <Compile Include="ProductStoreManagement\ProductStoreService.cs" />
+    <Compile Include="ProductStoreRequestManagement\ProductStoreRequestManagementProfile.cs" />
+    <Compile Include="ProductStoreRequestManagement\ProductStoreRequestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestedResourceHasConflictException.cs" />
     <Compile Include="RequestedResourceNotFoundException.cs" />
@@ -112,5 +114,6 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

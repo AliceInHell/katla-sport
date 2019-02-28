@@ -9,6 +9,7 @@ namespace KatlaSport.Services.ProductStoreRequestManagement
         public ProductStoreRequestManagementProfile()
         {
             CreateMap<UpdateRequest, DataAccessProductStoreRequest>();
+            CreateMap<DataAccessProductStoreRequest, FeedbackRequest>();
         }
     }
 }
