@@ -3,6 +3,6 @@ export class ProductStoreRequest {
         public id: number,
         public productStoreId: number,
         public quantity: number,        
-        public isCancelled: boolean        
+        public isProcessed: boolean        
     ) { }
 }

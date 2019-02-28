@@ -15,4 +15,16 @@ export class ProductStoreRequestService {
   createRequest(productStoreRequest: ProductStoreRequest): Observable<ProductStoreRequest> {
     return this.http.post<ProductStoreRequest>(`${this.url}`, productStoreRequest);
   }
+
+  getRequests(): Observable<Array<ProductStoreRequest>> {
+    return this.http.get<Array<ProductStoreRequest>>(`${this.url}`);
+  }
+
+  approve(requestId: number): Observable<Object> {
+    return this.http.put(`${this.url}${requestId}/approve`, null);
+  }
+
+  reject(requestId: number): Observable<Object> {
+    return this.http.put(`${this.url}${requestId}/reject`, null);
+  }
 }
